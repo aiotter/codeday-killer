@@ -1,0 +1,24 @@
+{
+  "name": "codeday-killer",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "description": "Let you avoid poor machine-translated website like codeday.me",
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/all.js"]
+    },
+    {
+      "matches": ["*://codeday.me/*/qa/*/*.html"],
+      "js": ["js/sites/codeday.me.js"]
+    }
+  ],
+  "permissions": [
+    "notifications"
+  ]
+}
+
